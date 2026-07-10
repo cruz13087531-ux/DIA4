@@ -304,34 +304,43 @@
             text-align: center;
         }
 
+        /* --- ESTILOS DE LA GALERÍA POLAROID --- */
         .contenedor-galeria {
-            margin-top: 30px;
-            margin-bottom: 35px;
+            margin-top: 35px;
+            margin-bottom: 40px;
             display: flex;
             flex-direction: column;
+            gap: 30px;
             align-items: center;
+            width: 100%;
         }
 
         .bloque-imagen-polaroid {
             background: #ffffff;
-            padding: 18px 18px 30px 18px;
+            padding: 18px 18px 25px 18px;
             border-radius: 4px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.12);
             border: 1px solid rgba(0,0,0,0.05);
-            transform: rotate(1.5deg);
             max-width: 85%;
+            width: 100%;
+            box-sizing: border-box;
             transition: transform 0.3s ease;
         }
 
+        .polaroid-1 { transform: rotate(-1.5deg); }
+        .polaroid-2 { transform: rotate(2deg); }
+
         .bloque-imagen-polaroid:hover {
-            transform: rotate(0deg) scale(1.02);
+            transform: rotate(0deg) scale(1.03);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.18);
         }
 
         .bloque-imagen-polaroid img {
             width: 100%;
             height: auto;
             border: 1px solid #f0f0f0;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            display: block;
         }
 
         .pie-imagen-polaroid {
@@ -342,6 +351,7 @@
             text-align: center;
             white-space: pre-line;
             font-style: italic;
+            font-weight: 500;
         }
 
         .firma {
@@ -420,14 +430,19 @@ Lo único que quería era llegar y ver tu reacción. Y cuando vi tu carita... va
 Y creo que esa fue la primera vez que descubrí lo bonito que se siente regalar flores a alguien que realmente amas. No por cumplir. No por compromiso. Sino porque quieres recordarle, aunque sea con un pequeño detalle, lo importante que es para ti.</div>
 
         <div class="contenedor-galeria">
-            <div class="bloque-imagen-polaroid">
-                <img src="imagen6.jpg" alt="Nuestros Lirios Especiales">
+            <div class="bloque-imagen-polaroid polaroid-1">
+                <img src="imagen5.jpg" alt="Recuerdo Feliz">
+                <div class="pie-imagen-polaroid">"Entre más culero el barrio más linda la morra"</div>
+            </div>
+
+            <div class="bloque-imagen-polaroid polaroid-2">
+                <img src="imagen7.jpg" alt="Los Lirios Especiales">
                 <div class="pie-imagen-polaroid">"Ojalá esta mujer nunca dude de lo mucho que la quiero."</div>
             </div>
         </div>
 
         <div class="subtitulo-fecha">✨ Tus Manos, Mis Flores Favoritas</div>
-        <div class="bloque-texto">Y luego pasó algo que me terminó de enamorar todavía más: ver cómo cuidabas esos lirios. Los tratabas con un cariño que me hacía sonreír cada vez que me enviabas una foto de ellos. Incluso los que todavía no habían florecido me parecían hermosos, porque imaginaba que, con el tiempo, también iban a abrirse.
+        <div class="bloque-texto">Y luego pasó algo que me terminó de enamorar todavía más: ver cómo cuidabas esos lirios. Los tratabas con un cariño que me hacía sonreír cada vez que me enviabas una foto de ellos. Incluso los que todavía no habían florecido me percibían hermosos, porque imaginaba que, con el tiempo, también iban a abrirse.
 
 Desde ese día los lirios se convirtieron en mis flores favoritas. Ya no porque sean bonitos... sino porque cada vez que veo uno, inevitablemente pienso en ti.</div>
 
@@ -461,21 +476,19 @@ Desde ese día los lirios se convirtieron en mis flores favoritas. Ya no porque 
             fondo.appendChild(elemento);
         }
 
-        // Función para abrir la carta y activar la música en los tiempos solicitados
+        // Función para abrir la carta y activar la música
         function abrirCarta() {
             const sobre = document.getElementById('sobre');
             sobre.classList.add('abierto');
 
-            // Activar reproducción con tiempos (0:34 a 3:53)
             const audio = document.getElementById('musicaCarta');
-            audio.currentTime = 34; // Comienza en el segundo 34 (0:34)
+            audio.currentTime = 34; // Inicia en 0:34
             audio.play().catch(function(error) {
-                console.log("La reproducción automática requiere interacción previa del usuario:", error);
+                console.log("Error en reproducción automática:", error);
             });
 
-            // Controlar el límite de tiempo (3:53 = 233 segundos)
             audio.ontimeupdate = function() {
-                if (audio.currentTime >= 233) {
+                if (audio.currentTime >= 233) { // Se detiene en 3:53
                     audio.pause();
                 }
             };
