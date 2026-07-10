@@ -304,13 +304,12 @@
             text-align: center;
         }
 
-        /* --- ESTILOS DE LA GALERÍA POLAROID --- */
+        /* --- CONTENEDOR POLAROID --- */
         .contenedor-galeria {
             margin-top: 35px;
             margin-bottom: 40px;
             display: flex;
-            flex-direction: column;
-            gap: 30px;
+            justify-content: center;
             align-items: center;
             width: 100%;
         }
@@ -321,14 +320,12 @@
             border-radius: 4px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.12);
             border: 1px solid rgba(0,0,0,0.05);
-            max-width: 85%;
+            max-width: 80%;
             width: 100%;
             box-sizing: border-box;
+            transform: rotate(1.5deg);
             transition: transform 0.3s ease;
         }
-
-        .polaroid-1 { transform: rotate(-1.5deg); }
-        .polaroid-2 { transform: rotate(2deg); }
 
         .bloque-imagen-polaroid:hover {
             transform: rotate(0deg) scale(1.03);
@@ -373,6 +370,7 @@
 
     <div class="corazones-fondo" id="corazones-fondo"></div>
 
+    <!-- AUDIO EN REPRODUCCIÓN AUTOMÁTICA -->
     <audio id="musicaCarta" src="cancion16.mp3" preload="auto"></audio>
 
     <div class="contenedor-sobre" id="contenedor-sobre">
@@ -407,7 +405,7 @@ Y con ese pensamiento me animé.</div>
 
 Cuando llegué, la señora me preguntó:
 —¿De qué color los quiere?
-Y apenas los vi, no lo dudé. Escogí esos lirios porque el color me recordó al tono de tus labios... sí, esos que tanto me encantan.
+Y apenas los vi, no lo duhda. Escogí esos lirios porque el color me recordó al tono de tus labios... sí, esos que tanto me encantan.
 Y pensé: "Tienen que ser estos."
 
 El único problema era que el ramo era gigantesco. Yo solo lo veía crecer y crecer mientras la señora lo armaba y pensaba: "Ay... ya valí." Porque tú sabes que a mí me encanta esconder las sorpresas... y con semejante ramo era completamente imposible. JAJAJAJA.</div>
@@ -429,20 +427,16 @@ Lo único que quería era llegar y ver tu reacción. Y cuando vi tu carita... va
 
 Y creo que esa fue la primera vez que descubrí lo bonito que se siente regalar flores a alguien que realmente amas. No por cumplir. No por compromiso. Sino porque quieres recordarle, aunque sea con un pequeño detalle, lo importante que es para ti.</div>
 
+        <!-- ÚNICA POLAROID CON LA FOTO DE LAS FLORES (imagen7) -->
         <div class="contenedor-galeria">
-            <div class="bloque-imagen-polaroid polaroid-1">
-                <img src="imagen5.jpg" alt="Recuerdo Feliz">
-                <div class="pie-imagen-polaroid">"Entre más culero el barrio más linda la morra"</div>
-            </div>
-
-            <div class="bloque-imagen-polaroid polaroid-2">
+            <div class="bloque-imagen-polaroid">
                 <img src="imagen7.jpg" alt="Los Lirios Especiales">
                 <div class="pie-imagen-polaroid">"Ojalá esta mujer nunca dude de lo mucho que la quiero."</div>
             </div>
         </div>
 
         <div class="subtitulo-fecha">✨ Tus Manos, Mis Flores Favoritas</div>
-        <div class="bloque-texto">Y luego pasó algo que me terminó de enamorar todavía más: ver cómo cuidabas esos lirios. Los tratabas con un cariño que me hacía sonreír cada vez que me enviabas una foto de ellos. Incluso los que todavía no habían florecido me percibían hermosos, porque imaginaba que, con el tiempo, también iban a abrirse.
+        <div class="bloque-texto">Y luego pasó algo que me terminó de enamorar todavía más: ver cómo cuidabas esos lirios. Los tratabas con un cariño que me hacía sonreír cada vez que me enviabas una foto de ellos. Incluso los que todavía no habían florecido me parecían hermosos, porque imaginaba que, con el tiempo, también iban a abrirse.
 
 Desde ese día los lirios se convirtieron en mis flores favoritas. Ya no porque sean bonitos... sino porque cada vez que veo uno, inevitablemente pienso en ti.</div>
 
